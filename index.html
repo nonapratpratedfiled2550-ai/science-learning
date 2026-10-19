@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05060f">
+  <meta name="description" content="Science Learning จักรวาลของวิทยาศาสตร์ รวมเคมี ฟิสิกส์ และชีววิทยาไว้ในที่เดียว">
+  <meta property="og:title" content="Science Learning | จักรวาลของวิทยาศาสตร์">
+  <meta property="og:description" content="เลือกโลกเคมี ฟิสิกส์ หรือชีววิทยา แล้วเข้าเรียนได้ทันที">
+  <title>Science Learning | จักรวาลของวิทยาศาสตร์</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2305060f'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23fff'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%237ad7ff' stroke-width='1.6'/%3E%3Ccircle cx='48' cy='28' r='3.2' fill='%23ffc56b'/%3E%3Ccircle cx='20' cy='44' r='2.6' fill='%235ef0b0'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}.intro{display:none!important}</style></noscript>
+</head>
+<body>
+  <a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="nebula n1" aria-hidden="true"></div>
+  <div class="nebula n2" aria-hidden="true"></div>
+  <div class="nebula n3" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="dust" aria-hidden="true">
+    <span style="left:2%;top:46%">H₂O</span>
+    <span style="left:80%;top:12%">F = ma</span>
+    <span style="left:90%;top:58%">DNA</span>
+    <span style="left:8%;top:74%">E = mc²</span>
+    <span style="left:44%;top:90%">ATP</span>
+    <span style="left:93%;top:34%">λ</span>
+    <span style="left:18%;top:92%">n = m/M</span>
+  </div>
+  <div class="scroll-comet" aria-hidden="true"><span></span></div>
+
+  <div class="intro" id="intro">
+    <div class="intro-core" aria-hidden="true"></div>
+    <p class="intro-title" translate="no">Science Learning</p>
+    <p class="intro-sub">จักรวาลของวิทยาศาสตร์</p>
+  </div>
+
+  <div class="page" id="top">
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <a class="brand navlink" data-nav="home" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <strong translate="no">Science Learning</strong>
+            <small>จักรวาลของวิทยาศาสตร์</small>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="เมนูหลัก">
+          <a class="navlink" data-nav="chemistry" href="#chemistry">เคมี</a>
+          <a class="navlink" data-nav="physics" href="#physics">ฟิสิกส์</a>
+          <a class="navlink" data-nav="biology" href="#biology">ชีววิทยา</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero wrap">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker"><span translate="no">UNIVERSE</span> จักรวาลของวิทยาศาสตร์</p>
+            <h1 translate="no">Science<br>Learning</h1>
+          </div>
+
+          <div class="orrery" id="orrery" role="group" aria-label="แผนที่สามโลก">
+            <div class="dial" aria-hidden="true"></div>
+            <svg class="links" viewBox="0 0 100 100" aria-hidden="true">
+              <line class="link-chemistry" x1="50" y1="50" x2="50" y2="20"></line>
+              <line class="link-physics" x1="50" y1="50" x2="20" y2="76"></line>
+              <line class="link-biology" x1="50" y1="50" x2="80" y2="76"></line>
+            </svg>
+            <div class="core" aria-hidden="true"><span class="corona"></span><span>SCI</span></div>
+
+            <a class="orb north tone-chem" data-world="chemistry" href="#chemistry">
+              <span class="sphere chem"><span class="globe"><span class="clouds"></span></span><i class="sat"></i><i class="sat s2"></i></span>
+              <span class="orb-copy"><span class="orb-name">เคมี</span><span class="orb-sub">โจทย์และแล็บ</span></span>
+            </a>
+            <a class="orb tone-phys" data-world="physics" href="#physics" style="left:20%;top:76%">
+              <span class="sphere phys"><span class="globe"><span class="clouds"></span></span><i class="sat"></i></span>
+              <span class="orb-copy"><span class="orb-name">ฟิสิกส์</span><span class="orb-sub">ฝึกคิดโจทย์</span></span>
+            </a>
+            <a class="orb tone-bio" data-world="biology" href="#biology" style="left:80%;top:76%">
+              <span class="sphere bio"><span class="globe"><span class="clouds"></span></span><i class="sat"></i><i class="sat s2"></i></span>
+              <span class="orb-copy"><span class="orb-name">ชีววิทยา</span><span class="orb-sub">ห้าบทเรียน</span></span>
+            </a>
+          </div>
+
+          <div class="chart">
+            <span class="corner tl" aria-hidden="true"></span>
+            <span class="corner tr" aria-hidden="true"></span>
+            <span class="corner bl" aria-hidden="true"></span>
+            <span class="corner br" aria-hidden="true"></span>
+            <p class="chart-title">เลือกโลกที่อยากเข้า</p>
+            <p class="chart-sub">กดชื่อวิชา หน้าเรียนจะเปิดขึ้นในเว็บนี้</p>
+            <a class="choice tone-chem" data-world="chemistry" href="#chemistry">
+              <span class="dot" aria-hidden="true"></span>
+              <span><strong>เคมี</strong><small>คลังโจทย์ 52 ข้อ และห้องแล็บ 5 บท</small></span>
+              <span class="go">เข้าเรียน</span>
+            </a>
+            <a class="choice tone-phys" data-world="physics" href="#physics">
+              <span class="dot" aria-hidden="true"></span>
+              <span><strong>ฟิสิกส์</strong><small>พิมพ์โจทย์เอง ระบบชี้บทและสูตร ม.4–ม.6</small></span>
+              <span class="go">เข้าเรียน</span>
+            </a>
+            <a class="choice tone-bio" data-world="biology" href="#biology">
+              <span class="dot" aria-hidden="true"></span>
+              <span><strong>ชีววิทยา</strong><small>ห้าบท ตั้งแต่เซลล์จนถึงยีน</small></span>
+              <span class="go">เข้าเรียน</span>
+            </a>
+            <a class="textlink" href="#worlds">ดูว่าแต่ละโลกมีอะไร</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap" id="worlds">
+        <div class="sec-head reveal">
+          <p class="kicker"><span translate="no">THREE WORLDS</span> สามโลก</p>
+          <h2>ข้างในแต่ละโลก</h2>
+          <p>อ่านสั้น ๆ ก่อนได้ อยากเริ่มเลยก็กดเข้าเรียนได้ทันที</p>
+        </div>
+
+        <article class="band tone-chem reveal" data-world="chemistry">
+          <div class="band-visual">
+            <span class="sphere lg chem" aria-hidden="true"><span class="globe"><span class="clouds"></span></span><i class="sat"></i><i class="sat s2"></i><i class="sat s3"></i></span>
+          </div>
+          <div class="band-copy">
+            <p class="index" translate="no">01 · Chemistry</p>
+            <h3>โลกเคมี</h3>
+            <p class="blurb">เรียนเคมีแบบโต้ตอบ ฝึกโจทย์เอง หรือเข้าห้องแล็บจำลองแล้วปรับค่าดูผลได้ทันที</p>
+            <ul class="points">
+              <li>ฝึกทำโจทย์เอง เลือกสูตร แล้วให้ระบบคำนวณ</li>
+              <li>คลังโจทย์ 52 ข้อ พร้อมตรวจคำตอบ</li>
+              <li>ห้องแล็บจำลอง 5 บท</li>
+              <li>ดูความก้าวหน้าของตัวเอง</li>
+            </ul>
+            <ul class="chips">
+              <li>ความปลอดภัย</li>
+              <li>อะตอมและธาตุ</li>
+              <li>พันธะเคมี</li>
+              <li>โมลและสูตร</li>
+              <li>สารละลาย</li>
+            </ul>
+            <div class="actions">
+              <a class="btn primary" href="#chemistry">เข้าเรียนเคมี</a>
+              <a class="btn ghost" href="https://chemistry11.vercel.app/#home" target="_blank" rel="noopener noreferrer">เปิดเต็มหน้า</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="band reverse tone-phys reveal" data-world="physics">
+          <div class="band-visual">
+            <span class="sphere lg phys" aria-hidden="true"><span class="globe"><span class="clouds"></span></span><i class="sat"></i></span>
+            <svg class="wave" viewBox="0 0 240 70" aria-hidden="true">
+              <path d="M0 36 C20 36 20 12 40 12 S60 36 80 36 S100 60 120 60 S140 36 160 36 S180 12 200 12 S220 36 240 36" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div class="band-copy">
+            <p class="index" translate="no">02 · Physics</p>
+            <h3>โลกฟิสิกส์</h3>
+            <p class="blurb">ระบบฝึกคิดโจทย์ฟิสิกส์ ม.4–ม.6 พิมพ์โจทย์เอง แล้วระบบชี้บท สูตร และตัวแปรให้</p>
+            <ul class="points">
+              <li>พิมพ์โจทย์ภาษาไทย ระบบช่วยจับบทที่ตรง</li>
+              <li>มีคลังสูตร สื่อจำลอง และหน้าความก้าวหน้า</li>
+              <li>ครบ 20 บท ตั้งแต่การวัดจนถึงฟิสิกส์นิวเคลียร์</li>
+            </ul>
+            <ul class="chips">
+              <li>การเคลื่อนที่</li>
+              <li>แรงและพลังงาน</li>
+              <li>คลื่นและแสง</li>
+              <li>ไฟฟ้า</li>
+              <li>ความร้อน</li>
+              <li>อะตอมและนิวเคลียร์</li>
+            </ul>
+            <div class="actions">
+              <a class="btn primary" href="#physics">เข้าเรียนฟิสิกส์</a>
+              <a class="btn ghost" href="https://physics-omega-lemon.vercel.app/" target="_blank" rel="noopener noreferrer">เปิดเต็มหน้า</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="band tone-bio reveal" data-world="biology">
+          <div class="band-visual">
+            <div class="bio-art">
+              <div class="helix" aria-hidden="true"></div>
+              <span class="sphere lg bio"><span class="globe"><span class="clouds"></span></span><i class="sat"></i><i class="sat s2"></i></span>
+            </div>
+          </div>
+          <div class="band-copy">
+            <p class="index" translate="no">03 · Biology</p>
+            <h3>โลกชีววิทยา</h3>
+            <p class="blurb">ห้องแล็บชีววิทยามีห้าบท เลือกอันที่อยากลอง แล้วเข้าเรียนได้เลย</p>
+            <ul class="points">
+              <li>การศึกษาชีววิทยา — สังเกต ทดลอง และใช้กล้อง</li>
+              <li>เคมีของสิ่งมีชีวิต — อาหาร โปรตีน และ DNA</li>
+              <li>เซลล์ — ออร์แกเนลล์และออสโมซิส</li>
+              <li>พันธุกรรม — พันเนตต์และพงศาวลี</li>
+              <li>ยีนและโครโมโซม — DNA การกลาย และ PCR</li>
+            </ul>
+            <div class="actions">
+              <a class="btn primary" href="#biology">เข้าเรียนชีววิทยา</a>
+              <a class="btn ghost" href="https://bio-pi-dun.vercel.app/index.html" target="_blank" rel="noopener noreferrer">เปิดเต็มหน้า</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="wrap guide" id="guide">
+        <div class="sec-head reveal">
+          <p class="kicker"><span translate="no">HOW TO</span> ใช้งาน</p>
+          <h2>สามขั้นก็พอ</h2>
+          <p>เว็บนี้คือประตูจักรวาล พอเลือกโลกแล้วจะได้เรียนในหน้าเดิม</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <b>1</b>
+            <h3>เลือกโลก</h3>
+            <p>กด เคมี ฟิสิกส์ หรือ ชีววิทยา จากเมนูด้านบน หรือจากการ์ด</p>
+          </article>
+          <article class="step reveal">
+            <b>2</b>
+            <h3>เข้าเรียน</h3>
+            <p>หน้าของวิชานั้นเปิดขึ้นมาตรงนี้ ฝึกโจทย์หรือเข้าบทเรียนได้เลย</p>
+          </article>
+          <article class="step reveal">
+            <b>3</b>
+            <h3>สลับโลกได้เสมอ</h3>
+            <p>กดชื่อวิชาบนแถบด้านบน หรือกด ← จักรวาล เพื่อกลับมาหน้านี้ กด Esc ก็กลับได้</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <nav class="dock" aria-label="เมนูลัด">
+    <a class="navlink" data-nav="chemistry" href="#chemistry">เคมี</a>
+    <a class="navlink" data-nav="physics" href="#physics">ฟิสิกส์</a>
+    <a class="navlink" data-nav="biology" href="#biology">ชีววิทยา</a>
+  </nav>
+
+  <div class="viewer" id="viewer" hidden>
+    <div class="viewer-bar">
+      <a class="back navlink" id="back-home" data-nav="home" href="#top">← จักรวาล</a>
+      <div class="tabs" role="tablist" aria-label="สลับโลก">
+        <a class="navlink" data-nav="chemistry" href="#chemistry" role="tab">เคมี</a>
+        <a class="navlink" data-nav="physics" href="#physics" role="tab">ฟิสิกส์</a>
+        <a class="navlink" data-nav="biology" href="#biology" role="tab">ชีววิทยา</a>
+      </div>
+      <a class="full" id="open-full" href="https://chemistry11.vercel.app/#home" target="_blank" rel="noopener noreferrer">เปิดเต็มหน้า</a>
+    </div>
+    <div class="stage">
+      <div class="warp" id="warp" hidden>
+        <div class="warp-stars" aria-hidden="true"></div>
+        <p id="warp-text" role="status">กำลังเดินทาง</p>
+      </div>
+      <iframe id="frame" title="โลกวิทยาศาสตร์" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </div>
+
+  <script src="universe.js"></script>
+</body>
+</html>
