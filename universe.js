@@ -18,7 +18,7 @@
       th: "ชีววิทยา",
       en: "Biology",
       color: "#5ef0b0",
-      url: "https://bio-pi-dun.vercel.app/index.html"
+      url: "https://bio-learning.vercel.app"
     }
   };
 
