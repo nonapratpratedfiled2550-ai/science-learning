@@ -21,7 +21,14 @@
   <div class="nebula n1" aria-hidden="true"></div>
   <div class="nebula n2" aria-hidden="true"></div>
   <div class="nebula n3" aria-hidden="true"></div>
+  <div class="nebula n4" aria-hidden="true"></div>
+  <div class="nebula n5" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="aurora a2" aria-hidden="true"></div>
+  <div class="ringfield" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="scan" aria-hidden="true"></div>
   <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
   <div class="dust" aria-hidden="true">
     <span style="left:2%;top:46%">H₂O</span>
     <span style="left:80%;top:12%">F = ma</span>
@@ -30,10 +37,17 @@
     <span style="left:44%;top:90%">ATP</span>
     <span style="left:93%;top:34%">λ</span>
     <span style="left:18%;top:92%">n = m/M</span>
+    <span style="left:68%;top:76%">CO₂</span>
+    <span style="left:14%;top:16%">Na⁺</span>
+    <span style="left:58%;top:6%">pV = nRT</span>
+    <span style="left:36%;top:58%">v = fλ</span>
+    <span style="left:84%;top:86%">ΔG</span>
+    <span style="left:48%;top:24%">C₆H₁₂O₆</span>
   </div>
   <div class="scroll-comet" aria-hidden="true"><span></span></div>
 
   <div class="intro" id="intro">
+    <div class="intro-rings" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="intro-core" aria-hidden="true"></div>
     <p class="intro-title" translate="no">Science Learning</p>
     <p class="intro-sub">จักรวาลของวิทยาศาสตร์</p>
@@ -66,7 +80,9 @@
           </div>
 
           <div class="orrery" id="orrery" role="group" aria-label="แผนที่สามโลก">
+            <div class="halo" aria-hidden="true"></div>
             <div class="dial" aria-hidden="true"></div>
+            <div class="dial slow" aria-hidden="true"></div>
             <svg class="links" viewBox="0 0 100 100" aria-hidden="true">
               <line class="link-chemistry" x1="50" y1="50" x2="50" y2="20"></line>
               <line class="link-physics" x1="50" y1="50" x2="20" y2="76"></line>
@@ -145,7 +161,7 @@
             </ul>
             <div class="actions">
               <a class="btn primary" href="#chemistry">เข้าเรียนเคมี</a>
-              <a class="btn ghost" href="https://chemistry11.vercel.app/#home" target="_blank" rel="noopener noreferrer">เปิดเต็มหน้า</a>
+              <a class="btn ghost" href="https://chem-lab-sigma.vercel.app/" target="_blank" rel="noopener noreferrer">เปิดเต็มหน้า</a>
             </div>
           </div>
         </article>
@@ -249,11 +265,13 @@
         <a class="navlink" data-nav="physics" href="#physics" role="tab">ฟิสิกส์</a>
         <a class="navlink" data-nav="biology" href="#biology" role="tab">ชีววิทยา</a>
       </div>
-      <a class="full" id="open-full" href="https://chemistry11.vercel.app/#home" target="_blank" rel="noopener noreferrer">เปิดเต็มหน้า</a>
+      <a class="full" id="open-full" href="https://chem-lab-sigma.vercel.app/" target="_blank" rel="noopener noreferrer">เปิดเต็มหน้า</a>
     </div>
     <div class="stage">
       <div class="warp" id="warp" hidden>
         <div class="warp-stars" aria-hidden="true"></div>
+        <div class="warp-stars far" aria-hidden="true"></div>
+        <div class="warp-comet" aria-hidden="true"></div>
         <p id="warp-text" role="status">กำลังเดินทาง</p>
       </div>
       <iframe id="frame" title="โลกวิทยาศาสตร์" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
