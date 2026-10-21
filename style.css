@@ -3,7 +3,7 @@
   --ink: #f4f7ff;
   --muted: #b7c3dc;
   --line: rgba(255, 255, 255, 0.1);
-  --chem: #ffc56b;
+  --chem: #d4b0ff;
   --phys: #7ad7ff;
   --bio: #5ef0b0;
   --accent: #ffffff;
@@ -79,7 +79,7 @@ body::after {
 .n1 { background: #7a3dff; top: -18%; left: -14%; animation-duration: 18s, 8s; }
 .n2 { background: #1c86e8; right: -16%; top: 6%; width: 52vw; height: 52vw; animation-duration: 22s, 11s; }
 .n3 { background: #14b87a; left: 22%; bottom: -24%; animation-duration: 20s, 9s; animation-delay: 0s, -3s; }
-.n4 { background: #ff7a2f; width: 34vw; height: 34vw; top: 46%; left: 58%; opacity: 0.55; animation-duration: 16s, 7s; }
+.n4 { background: #8b3dff; width: 36vw; height: 36vw; top: 2%; left: 58%; opacity: 0.55; animation-duration: 16s, 7s; }
 .n5 { background: #b44bff; width: 28vw; height: 28vw; top: 4%; left: 38%; opacity: 0.5; animation-duration: 24s, 10s; }
 
 .aurora {
@@ -131,7 +131,7 @@ body::after {
 .ringfield i:nth-child(2) {
   inset: 12%;
   border-style: dashed;
-  border-color: rgba(255, 197, 107, 0.28);
+  border-color: rgba(196, 150, 255, 0.45);
   animation-duration: 48s;
   animation-direction: reverse;
 }
@@ -196,7 +196,7 @@ body::after {
   pointer-events: none;
   animation: floatFormula 18s ease-in-out infinite alternate;
 }
-.dust span:nth-child(odd) { animation-duration: 26s; color: rgba(255, 214, 150, 0.46); text-shadow: 0 0 14px rgba(255, 180, 80, 0.55); }
+.dust span:nth-child(odd) { animation-duration: 26s; color: rgba(226, 196, 255, 0.5); text-shadow: 0 0 14px rgba(180, 120, 255, 0.6); }
 .dust span:nth-child(3n) { animation-duration: 22s; color: rgba(160, 255, 210, 0.42); text-shadow: 0 0 14px rgba(80, 240, 170, 0.5); }
 
 .scroll-comet {
@@ -220,7 +220,7 @@ body::after {
     0 0 14px #fff,
     0 0 28px #9fd0ff,
     0 -22px 22px rgba(160, 210, 255, 0.7),
-    0 -48px 28px rgba(255, 197, 107, 0.28);
+    0 -48px 28px rgba(196, 150, 255, 0.4);
 }
 
 .page { position: relative; z-index: 2; }
@@ -241,7 +241,7 @@ body::after {
   right: 0;
   bottom: -1px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(122, 215, 255, 0.9), rgba(255, 197, 107, 0.9), rgba(94, 240, 176, 0.9), transparent);
+  background: linear-gradient(90deg, transparent, rgba(122, 215, 255, 0.9), rgba(196, 150, 255, 0.95), rgba(94, 240, 176, 0.9), transparent);
   background-size: 200% 100%;
   animation: titleShift 7s linear infinite;
 }
@@ -456,7 +456,7 @@ h1 {
   font-size: 0.92rem;
 }
 
-.tone-chem { --accent: var(--chem); --glow: rgba(255, 176, 60, 0.5); }
+.tone-chem { --accent: var(--chem); --glow: rgba(176, 120, 255, 0.62); }
 .tone-phys { --accent: var(--phys); --glow: rgba(80, 190, 255, 0.48); }
 .tone-bio { --accent: var(--bio); --glow: rgba(70, 230, 170, 0.42); }
 
@@ -604,22 +604,62 @@ h1 {
     linear-gradient(100deg, rgba(255, 255, 255, 0.05) 10%, transparent 36%, rgba(0, 0, 0, 0.15) 62%, rgba(0, 0, 0, 0.62) 100%);
   pointer-events: none;
 }
-.sphere.chem .globe { background: #7a2c12; }
+.sphere.chem .globe {
+  background: #3b1578;
+  box-shadow:
+    inset -22px -16px 28px rgba(0, 0, 0, 0.55),
+    inset 8px 8px 16px rgba(255, 255, 255, 0.24),
+    0 0 0 2px rgba(216, 180, 254, 0.45),
+    0 0 26px rgba(168, 85, 247, 0.7);
+  animation: chemGlow 3.8s ease-in-out infinite;
+}
 .sphere.chem .globe::before {
   background-image:
-    radial-gradient(circle at 22% 38%, rgba(255, 236, 190, 0.95) 0 7%, transparent 8%),
-    radial-gradient(circle at 68% 58%, rgba(90, 24, 8, 0.75) 0 11%, transparent 12%),
-    radial-gradient(circle at 48% 24%, rgba(255, 120, 40, 0.7) 0 6%, transparent 7%),
-    radial-gradient(circle at 80% 30%, rgba(255, 210, 120, 0.8) 0 5%, transparent 6%),
-    repeating-linear-gradient(96deg, #ffd589 0 14px, #f08a32 14px 26px, #c44a16 26px 34px, #ffe0a4 34px 48px, #8d3014 48px 58px);
+    radial-gradient(circle at 24% 40%, rgba(245, 232, 255, 0.95) 0 6%, transparent 8%),
+    radial-gradient(circle at 68% 58%, rgba(76, 29, 149, 0.82) 0 12%, transparent 14%),
+    radial-gradient(circle at 46% 24%, rgba(216, 180, 254, 0.8) 0 7%, transparent 9%),
+    radial-gradient(circle at 82% 32%, rgba(244, 180, 255, 0.75) 0 5%, transparent 7%),
+    repeating-linear-gradient(180deg, #f3e8ff 0 8px, #c084fc 8px 18px, #6d28d9 18px 30px, #e9d5ff 30px 38px, #4c1d95 38px 52px, #d8b4fe 52px 60px);
+  background-size: 100% 200%;
+  width: 100%;
+  animation-name: bands;
+  animation-duration: 14s;
 }
 .sphere.chem .clouds {
   background-image:
-    radial-gradient(circle at 30% 50%, rgba(255, 180, 80, 0.28) 0 10%, transparent 12%),
-    radial-gradient(circle at 70% 40%, rgba(255, 80, 30, 0.22) 0 8%, transparent 10%);
+    radial-gradient(circle at 28% 46%, rgba(233, 213, 255, 0.5) 0 11%, transparent 13%),
+    radial-gradient(circle at 70% 38%, rgba(192, 132, 252, 0.38) 0 9%, transparent 11%),
+    radial-gradient(circle at 52% 70%, rgba(244, 180, 255, 0.32) 0 8%, transparent 10%);
   mix-blend-mode: screen;
-  animation-duration: 14s;
-  opacity: 0.85;
+  animation-duration: 11s;
+  animation-direction: reverse;
+  opacity: 0.9;
+}
+.sphere.chem::before,
+.sphere.chem::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 158%;
+  height: 48%;
+  border: 2px solid rgba(233, 213, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.55);
+  transform: translate(-50%, -50%) rotate(32deg);
+  animation: ring 10s linear infinite;
+}
+.sphere.chem::after {
+  width: 186%;
+  height: 62%;
+  border-color: rgba(192, 132, 252, 0.5);
+  transform: translate(-50%, -50%) rotate(-58deg);
+  animation-duration: 16s;
+  animation-direction: reverse;
+}
+.sphere.chem .sat {
+  background: #f5e8ff;
+  box-shadow: 0 0 12px #e9d5ff, -12px 0 10px rgba(192, 132, 252, 0.85);
 }
 .sphere.phys .globe { background: #12386e; }
 .sphere.phys .globe::before {
@@ -665,7 +705,6 @@ h1 {
   animation-duration: 18s;
   opacity: 0.8;
 }
-.sphere.chem .globe { box-shadow: inset -22px -16px 28px rgba(0, 0, 0, 0.5), inset 8px 8px 14px rgba(255, 255, 255, 0.2), 0 0 0 2px rgba(255, 190, 110, 0.28), 0 0 22px rgba(255, 150, 50, 0.45); }
 .sphere.phys .globe { box-shadow: inset -22px -16px 28px rgba(0, 0, 0, 0.5), inset 8px 8px 14px rgba(255, 255, 255, 0.2), 0 0 0 2px rgba(160, 220, 255, 0.3), 0 0 22px rgba(70, 170, 255, 0.45); }
 .sphere.phys::before,
 .sphere.phys::after {
@@ -971,7 +1010,7 @@ footer p { margin: 6px 0; color: var(--muted); }
   background: radial-gradient(circle at center, rgba(90, 140, 255, 0.28), #05060f 68%);
 }
 .warp[hidden] { display: none !important; }
-html[data-world="chemistry"] .warp { background: radial-gradient(circle, rgba(255, 176, 60, 0.38), #05060f 68%); }
+html[data-world="chemistry"] .warp { background: radial-gradient(circle, rgba(176, 110, 255, 0.46), #05060f 68%); }
 html[data-world="physics"] .warp { background: radial-gradient(circle, rgba(80, 200, 255, 0.36), #05060f 68%); }
 html[data-world="biology"] .warp { background: radial-gradient(circle, rgba(80, 255, 180, 0.28), #05060f 68%); }
 .warp-stars {
@@ -1133,6 +1172,22 @@ body.in-world .dock { display: none; }
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: none; }
 }
+@keyframes chemGlow {
+  0%, 100% {
+    box-shadow:
+      inset -22px -16px 28px rgba(0, 0, 0, 0.55),
+      inset 8px 8px 16px rgba(255, 255, 255, 0.24),
+      0 0 0 2px rgba(216, 180, 254, 0.4),
+      0 0 22px rgba(168, 85, 247, 0.5);
+  }
+  50% {
+    box-shadow:
+      inset -22px -16px 28px rgba(0, 0, 0, 0.5),
+      inset 10px 8px 18px rgba(255, 255, 255, 0.32),
+      0 0 0 3px rgba(233, 213, 255, 0.75),
+      0 0 38px rgba(192, 132, 252, 0.9);
+  }
+}
 @keyframes introOut { to { opacity: 0; visibility: hidden; } }
 @keyframes nebulaPulse {
   0%, 100% { opacity: 0.55; }
@@ -1149,7 +1204,7 @@ body.in-world .dock { display: none; }
 @keyframes scan { to { transform: translateY(130vh); } }
 @keyframes chartGlow {
   from { box-shadow: 0 0 0 1px rgba(122, 215, 255, 0.16), 0 18px 50px -32px rgba(80, 150, 255, 0.55); }
-  to { box-shadow: 0 0 0 1px rgba(255, 197, 107, 0.4), 0 18px 50px -28px rgba(255, 170, 80, 0.45); }
+  to { box-shadow: 0 0 0 1px rgba(196, 150, 255, 0.5), 0 18px 50px -28px rgba(150, 90, 255, 0.5); }
 }
 @keyframes gridDrift {
   from { background-position: 0 0, 0 0, 0 0; }

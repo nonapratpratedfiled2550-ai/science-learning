@@ -5,7 +5,7 @@
     chemistry: {
       th: "เคมี",
       en: "Chemistry",
-      color: "#ffc56b",
+      color: "#d4b0ff",
       url: "https://chem-lab-sigma.vercel.app/"
     },
     physics: {
@@ -198,7 +198,7 @@
   var ringX = 0;
   var ringY = 0;
   var pointerOn = false;
-  var HUES = [38, 196, 156, 272];
+  var HUES = [286, 196, 156, 272];
 
   function resize() {
     var dpr = Math.min(window.devicePixelRatio || 1, 1.75);
@@ -264,7 +264,7 @@
 
   function starColor(s) {
     if (s.warm > 0.9) return "#ffe7c2";
-    if (s.x < 0.34 && s.warm > 0.62) return "#ffd59a";
+    if (s.x < 0.34 && s.warm > 0.62) return "#e7d4ff";
     if (s.x > 0.68) return "#c9ecff";
     if (s.y > 0.7 && s.warm > 0.45) return "#b8ffdf";
     if (s.warm > 0.75) return "#e4d4ff";
@@ -537,7 +537,7 @@
     aimY = event.clientY;
     pointerOn = true;
     if (!reduce && glow) {
-      var palette = [[255, 197, 107], [122, 215, 255], [94, 240, 176]];
+      var palette = [[196, 150, 255], [122, 215, 255], [94, 240, 176]];
       var ink = palette[Math.min(2, (mx * 3) | 0)];
       glow.style.opacity = "1";
       glow.style.translate = aimX + "px " + aimY + "px";
