@@ -62,8 +62,10 @@
     }
   }
 
+  var devVideo = document.getElementById("dev-video");
+
   function mark(id) {
-    var current = WORLDS[id] ? id : "home";
+    var current = WORLDS[id] ? id : (id === "developer" ? "developer" : "home");
     document.querySelectorAll(".navlink").forEach(function (link) {
       var on = link.dataset.nav === current;
       link.classList.toggle("is-on", on);
@@ -98,6 +100,7 @@
     var changed = openId !== id;
     if (first) lastFocus = document.activeElement;
     openId = id;
+    if (devVideo) devVideo.pause();
     dismissIntro();
     document.body.classList.add("in-world");
     document.documentElement.dataset.world = id;
